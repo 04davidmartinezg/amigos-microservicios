@@ -3,3 +3,16 @@ GET http://127.0.0.1:8000
 
 ### Hola
 POST http://127.0.0.1:8000/hola
+
+### crear contacto
+POST http://127.0.0.1:8000/contacto
+Content-Type: application/json
+
+{
+    "nombre": "Pepe",
+    "email": "ana@test.com",
+    "telefono": "12345"
+}
+
+### consultar todos los contactos
+GET http://127.0.0.1:8000/contactos
