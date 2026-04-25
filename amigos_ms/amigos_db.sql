@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-04-2026 a las 00:59:51
+-- Tiempo de generación: 25-04-2026 a las 19:26:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -18,20 +18,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `contactos_db`
+-- Base de datos: `amigos_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `contactos`
+-- Estructura de tabla para la tabla `amigos`
 --
 
-CREATE TABLE `contactos` (
+CREATE TABLE `amigos` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(250) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `telefono` varchar(16) DEFAULT NULL
+  `nombre` varchar(150) NOT NULL,
+  `apodo` varchar(150) DEFAULT NULL,
+  `telefono` varchar(15) NOT NULL,
+  `email` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -39,9 +40,9 @@ CREATE TABLE `contactos` (
 --
 
 --
--- Indices de la tabla `contactos`
+-- Indices de la tabla `amigos`
 --
-ALTER TABLE `contactos`
+ALTER TABLE `amigos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -49,12 +50,13 @@ ALTER TABLE `contactos`
 --
 
 --
--- AUTO_INCREMENT de la tabla `contactos`
+-- AUTO_INCREMENT de la tabla `amigos`
 --
-ALTER TABLE `contactos`
+ALTER TABLE `amigos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
