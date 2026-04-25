@@ -63,3 +63,7 @@ Content-Type: application/json
 
 ### borrar contacto
 DELETE http://127.0.0.1:8000/contactos-v2/3
+
+###
+
+GET http://127.0.0.1:8000/test
