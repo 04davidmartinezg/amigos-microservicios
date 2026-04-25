@@ -13,4 +13,7 @@ return function (App $app) {
 
     $app->post('/contacto', [ContactosRepository::class, 'create']);
     $app->get('/contactos', [ContactosRepository::class, 'all']);
+    $app->get('/contacto/{id}', [ContactosRepository::class, 'detail']);
+    $app->put('/contacto/{id}', [ContactosRepository::class, 'update']);
+    $app->delete('/contacto/{id}', [ContactosRepository::class, 'delete']);
 };

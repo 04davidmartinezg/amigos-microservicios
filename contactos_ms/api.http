@@ -4,6 +4,13 @@ GET http://127.0.0.1:8000
 ### Hola
 POST http://127.0.0.1:8000/hola
 
+
+### consultar todos los contactos
+GET http://127.0.0.1:8000/contactos
+
+### consultar contacto
+GET http://127.0.0.1:8000/contacto/2
+
 ### crear contacto
 POST http://127.0.0.1:8000/contacto
 Content-Type: application/json
@@ -14,5 +21,15 @@ Content-Type: application/json
     "telefono": "12345"
 }
 
-### consultar todos los contactos
-GET http://127.0.0.1:8000/contactos
+### modificar contacto
+PUT http://127.0.0.1:8000/contacto/2
+Content-Type: application/json
+
+{
+    "nombre": "Pepe",
+    "email": "pepe@test.com",
+    "telefono": "789456"
+}
+
+### borrar contacto
+DELETE http://127.0.0.1:8000/contacto/3
