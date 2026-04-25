@@ -1,7 +1,7 @@
 <?php
-namespace App\Controllers;
+namespace App\Contactos\Controllers;
 
-use App\Models\Contacto;
+use App\Contactos\Models\Contacto;
 use Exception;
 
 class ContactosController {

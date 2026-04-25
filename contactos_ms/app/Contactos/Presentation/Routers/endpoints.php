@@ -1,10 +1,8 @@
 <?php
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
-use App\Presentation\Repositories\TestRepository;
-use App\Presentation\Repositories\ContactosRepository;
+use App\Contactos\Presentation\Repositories\TestRepository;
+use App\Contactos\Presentation\Repositories\ContactosRepository;
 use Slim\Routing\RouteCollectorProxy;
 
 return function (App $app) {
