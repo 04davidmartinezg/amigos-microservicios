@@ -6,7 +6,7 @@ use App\Amigos\Models\Amigo;
 use Exception;
 
 class AmigosController {
-        public function guardar($data) {
+        public function guardaramigo($data) {
     try {
 
         if (!is_array($data)) {
@@ -30,5 +30,31 @@ class AmigosController {
         ]);
     }
         }
+          function getAmigos(){
+        $rows = Amigo::all();
+        return $rows->toJson();
+    }
+    function getAmigo($id){
+       $amigo = Amigo::find($id);
+        if(empty($amigo)){
+            throw new Exception("El amigo $id no existe", 1);
+        }
+        return $amigo;
+    }
+
+    function modificarAmigo($id, $data){
+        $amigo = $this->getAmigo($id);
+        $amigo->nombre = $data['nombre'];
+        $amigo->email = $data['email'];
+        $amigo->telefono = $data['telefono'];
+        $amigo->apodo =$data ['apodo'];
+        $amigo->save();
+        return $amigo;
+    }
+
+    function borrarAmigos($id){
+        $amigo= $this->getAmigo($id);
+        $amigo->delete();
+    }
 
 }

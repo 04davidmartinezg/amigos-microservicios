@@ -6,7 +6,7 @@ POST http://127.0.0.1:8000/hola
 
 
 ### consultar todos los contactos
-GET http://127.0.0.1:8000/contactos
+GET http://127.0.0.1:8000/amigos
 
 ### consultar contacto
 GET http://127.0.0.1:8000/contacto/2

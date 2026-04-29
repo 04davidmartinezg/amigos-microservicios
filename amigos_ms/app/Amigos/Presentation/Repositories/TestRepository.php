@@ -5,7 +5,7 @@ namespace App\Amigos\Presentation\Repositories;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class TestRepository
+class AmigosRepository
 {
 
     function hola(Request $request, Response $response)

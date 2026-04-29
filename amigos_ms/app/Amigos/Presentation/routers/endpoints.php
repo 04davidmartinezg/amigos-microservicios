@@ -1,19 +1,14 @@
 <?php
 
 use Slim\App;
-use App\Amigos\Presentation\Repositories\TestRepository;
+use App\Amigos\Presentation\Repositories\AmigosRepository;
 use Slim\Routing\RouteCollectorProxy;
 
 return function (App $app) {
-    $app->get('/test', [TestRepository::class, 'hola']);
-    $app->post('/crearamigos', [AmigosRepository::class, 'create']);
+    $app->post('/amigo', [AmigosRepository::class, 'create']);
+    $app->get('/amigo', [AmigosRepository::class, 'all']);
+    $app->get('/amigo/{id}', [AmigosRepository::class, 'detail']);
+    $app->put('/amigo/{id}', [AmigosRepository::class, 'update']);
+    $app->delete('/amigo/{id}', [AmigosRepository::class, 'delete']);
 };
-use App\Amigos\Controllers\AmigosController;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_GET['endpoint'] === 'amigos') {
-
-    $data = json_decode(file_get_contents("php://input"), true);
-
-    $controller = new AmigosController();
-    echo $controller->guardar($data);
-}
