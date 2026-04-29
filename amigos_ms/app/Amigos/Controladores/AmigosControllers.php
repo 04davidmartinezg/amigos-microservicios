@@ -7,14 +7,7 @@ use Exception;
 
 class AmigosController {
         public function guardaramigo($data) {
-    try {
-
-        if (!is_array($data)) {
-            $data = json_decode($data, true);
-        }
-
         $amigo = new Amigo();
-
         $amigo->nombre = $data['nombre'] ?? null;
         $amigo->apodo = $data['apodo'] ?? null;
         $amigo->email = $data['email'] ?? null;
@@ -23,13 +16,8 @@ class AmigosController {
         $amigo->save();
 
         return json_encode($amigo);
-
-    } catch (Exception $e) {
-        return json_encode([
-            "error" => $e->getMessage()
-        ]);
-    }
         }
+        
           function getAmigos(){
         $rows = Amigo::all();
         return $rows->toJson();

@@ -9,7 +9,6 @@ $endpointsAmigos = require __DIR__ . '/../app/Amigos/Presentation/Routers/endpoi
 
 $app = AppFactory::create();
 
-$endpoints($app);
 $endpointsAmigos($app);
 
 $app->run();
