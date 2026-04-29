@@ -16,7 +16,7 @@ Content-Type: application/json
     "telefono": "765434"
 }
 
-### modificar contacto
+### modificar amigo
 PUT http://127.0.0.1:8000/Amigos/2
 Content-Type: application/json
 

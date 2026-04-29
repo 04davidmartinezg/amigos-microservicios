@@ -1,6 +1,6 @@
 <?php
 
-use Slim\App;
+use Slim\app;
 use App\Amigos\Presentation\Repositories\AmigosRepository;
 use Slim\Routing\RouteCollectorProxy;
 

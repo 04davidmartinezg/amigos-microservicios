@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Amigos\Controllers;
+namespace app\Amigos\Controladores;
 
-use App\Amigos\Models\Amigo;
+use app\Amigos\Models\Amigo;
 use Exception;
 
-class AmigosController {
+class AmigosControllers {
         public function guardaramigo($data) {
         $amigo = new Amigo();
         $amigo->nombre = $data['nombre'] ?? null;
@@ -17,7 +17,7 @@ class AmigosController {
 
         return json_encode($amigo);
         }
-        
+
           function getAmigos(){
         $rows = Amigo::all();
         return $rows->toJson();

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Amigos\Presentation\Repositories;
+namespace app\Amigos\Presentation\Repositories;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use App\Amigos\Controllers\AmigosController;
+use app\Amigos\Controladores\AmigosControllers;
 use Exception;
 
 class AmigosRepository{
@@ -12,14 +12,14 @@ class AmigosRepository{
     {
         $bodyRequest = $request->getBody()->getContents();
         $data = json_decode($bodyRequest, true);
-        $controller = new AmigosController();
+        $controller = new AmigosControllers();
         $contacto = $controller->guardarAmigo($data);
         $response->getBody()->write($contacto);
         return $response->withHeader("Content-Type", "application/json");
     }
     function all(Request $request, Response $response)
     {
-        $controller = new AmigosController();
+        $controller = new AmigosControllers();
         $amigos = $controller->getAmigos();
         $response->getBody()->write($amigos);
         return $response->withHeader("Content-Type", "application/json");
@@ -29,7 +29,7 @@ class AmigosRepository{
         try {
             $id = $args['id'];
 
-            $controller = new AmigosController();
+            $controller = new AmigosControllers();
             $amigo = $controller->getAmigo($id);
 
             $resposeBody = $amigo->toJson();
@@ -52,7 +52,7 @@ class AmigosRepository{
             $body = $req->getBody()->getContents();
             $data = json_decode($body, true);
 
-            $controller = new AmigosController();
+            $controller = new AmigosControllers();
             $contacto = $controller->modificarAmigo($id, $data);
 
             $dataResponse = $contacto->toJson();
@@ -75,7 +75,7 @@ class AmigosRepository{
         try {
             $id = $args['id'];
 
-            $controller = new AmigosController();
+            $controller = new AmigosControllers();
             $controller->borrarAmigos($id);
 
             $dataResponse = json_encode(['mgs' => 'Amigo borrado']);

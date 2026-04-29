@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Amigos\Models;
+namespace app\Amigos\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
